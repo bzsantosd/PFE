@@ -1,0 +1,72 @@
+:root {
+    --card-color: #808080; 
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    margin: 0;
+}
+
+.main-container {
+    display: flex;
+    gap: 40px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Formulário */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.color-options {
+    display: flex;
+    gap: 10px;
+}
+
+.color-options button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.color-options button:hover { transform: scale(1.2); }
+
+/* O Cartão */
+.card {
+    width: 350px;
+    height: 200px;
+    background-color: var(--card-color);
+    color: white;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+}
+
+.card-content {
+    text-align: center;
+}
+
+.card h1 { margin: 0; font-size: 24px; text-transform: uppercase; }
+.card p { margin: 5px 0 0; opacity: 0.8; font-style: italic; }

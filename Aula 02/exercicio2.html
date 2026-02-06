@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerador de Cartão de Visitas</title>
+    <link rel="stylesheet" href="exercicio2.css">
+</head>
+<body>
+
+    <div class="main-container">
+        <div class="form-container">
+            <h2>Crie seu Cartão</h2>
+            <input type="text" id="inputNome" placeholder="Seu Nome" oninput="atualizarCartao()">
+            <input type="text" id="inputCargo" placeholder="Seu Cargo" oninput="atualizarCartao()">
+            
+            <label>Escolha a cor do tema:</label>
+            <div class="color-options">
+                <button onclick="mudarCor('#808080')" style="background: #808080;"></button>
+                <button onclick="mudarCor('#4169e1')" style="background: #4169e1;"></button>
+                <button onclick="mudarCor('#008000')" style="background: #008000;"></button>
+                <button onclick="mudarCor('#f39c12')" style="background: #f39c12;"></button>
+                <button onclick="mudarCor('#b00000')" style="background: #b00000;"></button>
+            </div>
+            <input type="color" id="seletorCor" oninput="mudarCor(this.value)">
+        </div>
+
+        <div class="card" id="cartao">
+            <div class="card-content">
+                <h1 id="previewNome">Seu Nome</h1>
+                <p id="previewCargo">Seu Cargo</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="exercicio2.js"></script>
+</body>
+</html>
