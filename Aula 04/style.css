@@ -1,0 +1,54 @@
+/* 1. Maior que 1200px */
+@media screen and (min-width: 1201px) {
+    body {
+        background-color: #d1f7d1; 
+    }
+    img {
+        width: 22%; 
+        height: auto;
+    }
+}
+
+/* 2. Entre 1000px e 1200px */
+@media screen and (max-width: 1200px) {
+    body {
+        background-color: #d1e9f7; 
+    }
+    img {
+        width: 30%; 
+        height: auto;
+    }
+}
+
+/* 3. Entre 800px e 1000px */
+@media screen and (max-width: 999px) {
+    body {
+        background-color: #f7f1d1; 
+    }
+    img {
+        width: 45%; 
+        height: auto;
+    }
+}
+
+/* 4. Entre 600px e 800px */
+@media screen and (max-width: 799px) {
+    body {
+        background-color: #f7d1d1; 
+    }
+    img {
+        width: 80%; 
+        height: auto;
+    }
+}
+
+/* 5. Menor que 600px */
+@media screen and (max-width: 599px) {
+    body {
+        background-color: #e2d1f7; 
+    }
+    img {
+        width: 95%; 
+        height: auto;
+    }
+}
