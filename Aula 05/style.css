@@ -1,0 +1,159 @@
+
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+            font-family: -apple-system, system-ui, sans-serif;
+        }
+
+        body {
+            background-color: #000; 
+            color: #fff;
+            display: flex;
+        }
+
+        /* Sidebar Esquerda */
+        .sidebar {
+            width: 245px;
+            height: 100vh;
+            border-right: 1px solid #262626;
+            padding: 20px;
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo { font-size: 22px; margin-bottom: 20px; padding-left: 10px; }
+
+        /* CORREÇÃO: Estilização do Campo de Pesquisa */
+        .search-container {
+            padding: 0 10px;
+            margin-bottom: 20px;
+        }
+        .search-input {
+            width: 100%;
+            background-color: #262626;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 12px;
+            color: white;
+            font-size: 14px;
+        }
+
+        .nav-menu { flex-grow: 1; }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .nav-item:hover { background-color: #1a1a1a; }
+        .nav-item.active { font-weight: bold; }
+
+        /* Main Content Layout */
+        .main-content {
+            margin-left: 245px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 320px; 
+            justify-content: center;
+            max-width: 1200px;
+        }
+
+        .content-container {
+            max-width: 630px;
+            justify-self: end;
+            padding: 20px 50px;
+        }
+
+        /* Stories */
+        .stories {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            overflow-x: auto;
+            padding: 10px 0;
+        }
+
+        .story { text-align: center; font-size: 12px; cursor: pointer; }
+
+        .story-ring {
+            width: 66px; height: 66px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            display: flex;
+            align-items: center; justify-content: center;
+            margin-bottom: 5px;
+        }
+
+        .story-ring img {
+            width: 60px; height: 60px;
+            border-radius: 50%;
+            border: 2px solid #000;
+        }
+
+        /* Post Styling */
+        .post {
+            border-bottom: 1px solid #262626;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+        }
+
+        .post-header {
+            display: flex; align-items: center; padding: 10px 0;
+        }
+
+        .post-avatar {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .post-content video,
+        .post-content img {
+            width: 100%;
+            border-radius: 4px;
+            border: 1px solid #262626;
+            display: block;
+        }
+
+        .post-footer .actions {
+            display: flex; justify-content: space-between;
+            padding: 10px 0;
+        }
+
+        .left-actions { display: flex; gap: 15px; }
+
+        .caption { margin-top: 8px; font-size: 14px; }
+
+        /* Feed End Section */
+        .feed-end {
+            text-align: center;
+            padding: 40px 0 80px 0;
+            border-top: 1px solid #262626;
+            margin-top: 20px;
+        }
+
+        .check-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .check-circle {
+            width: 60px; height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ffd600, #ff7a00, #ff0069, #d300c5, #7638fa);
+            display: flex;
+            align-items: center; justify-content: center;
+        }
+
+        .check-circle svg { color: white; width: 30px; height: 30px; }
+
+        .feed-end h2 { font-size: 16px; margin-bottom: 8px; }
+        .feed-end p { font-size: 14px; color: #a8a8a8; }

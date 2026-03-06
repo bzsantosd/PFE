@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo-container">
+            <h1 class="logo">Instagram</h1>
+        </div>
+        
+        <div class="search-container">
+            <input type="text" placeholder="Pesquisar" class="search-input">
+        </div>
+
+        <nav class="nav-menu">
+            <div class="nav-item active"><i data-lucide="home"></i> <span>Página inicial</span></div>
+            <div class="nav-item"><i data-lucide="search"></i> <span>Pesquisa</span></div>
+            <div class="nav-item"><i data-lucide="compass"></i> <span>Explorar</span></div>
+            <div class="nav-item"><i data-lucide="play-circle"></i> <span>Reels</span></div>
+            <div class="nav-item"><i data-lucide="message-circle"></i> <span>Mensagens</span></div>
+            <div class="nav-item"><i data-lucide="heart"></i> <span>Notificações</span></div>
+            <div class="nav-item"><i data-lucide="plus-square"></i> <span>Criar</span></div>
+            <div class="nav-item"><i data-lucide="user"></i> <span>Perfil</span></div>
+        </nav>
+
+        <div class="nav-footer">
+            <div class="nav-item"><i data-lucide="menu"></i> <span>Mais</span></div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <div class="content-container">
+            <section class="stories">
+                <div class="story"><div class="story-ring"><img src="/Aula 05/img/img1.png"></div><span>Seu Story</span></div>
+                <div class="story"><div class="story-ring"><img src="/Aula 05/img/img2.png"></div><span>senailimeira_</span></div>
+                <div class="story"><div class="story-ring"><img src="/Aula 05/img/img10.png"></div><span>bandamslvar</span></div>
+                <div class="story"><div class="story-ring"><img src="/Aula 05/img/img4.png"></div><span>ajinomoto</span></div>
+                <div class="story"><div class="story-ring"><img src="/Aula 05/img/img5.png"></div><span>linkedin</span></div>
+                <div class="story"><div class="story-ring"><img src="/Aula 05/img/img6.png"></div><span>google</span></div>
+            </section>
+            
+            <section class="feed">
+                <article class="post">
+                    <header class="post-header">
+                        <img src="/Aula 05/img/img4.png" alt="Avatar" class="post-avatar">
+                        <span class="username">ajinomotodobrasil</span>
+                    </header>
+                    <div class="post-content">
+                        <img src="/Aula 05/img/img7.png" alt="Post Image">
+                    </div>
+                    <footer class="post-footer">
+                        <div class="actions">
+                            <div class="left-actions">
+                                <i data-lucide="heart"></i>
+                                <i data-lucide="message-circle"></i>
+                                <i data-lucide="send"></i>
+                            </div>
+                            <i data-lucide="bookmark"></i>
+                        </div>
+                        <div class="caption">
+                            <strong>ajinomotodobrasil</strong> O AjiPanda está afiado hoje! Será que ele falou de você?
+                        </div>
+                    </footer>
+                </article>
+
+                <article class="post">
+                    <header class="post-header">
+                        <img src="/Aula 05/img/img6.png" alt="Avatar" class="post-avatar">
+                        <span class="username">google</span>
+                    </header>
+                    <div class="post-content">
+                        <video src="/Aula 05/img/videoplayback.mp4" loop muted autoplay></video>
+                    </div>
+                    <footer class="post-footer">
+                        <div class="actions">
+                            <div class="left-actions">
+                                <i data-lucide="heart"></i>
+                                <i data-lucide="message-circle"></i>
+                                <i data-lucide="send"></i>
+                            </div>
+                            <i data-lucide="bookmark"></i>
+                        </div>
+                        <div class="caption">
+                            <strong>google</strong> The Pixel 10a is here! Here’s some unboxing content.
+                        </div>
+                    </footer>
+                </article>
+
+                <article class="post">
+                    <header class="post-header">
+                        <img src="/Aula 05/img/img9.png" alt="Avatar" class="post-avatar">
+                        <span class="username">cafedocaramelo</span>
+                    </header>
+                    <div class="post-content">
+                        <img src="/Aula 05/img/img8.png" alt="Post Image">
+                    </div>
+                    <footer class="post-footer">
+                        <div class="actions">
+                            <div class="left-actions">
+                                <i data-lucide="heart"></i>
+                                <i data-lucide="message-circle"></i>
+                                <i data-lucide="send"></i>
+                            </div>
+                            <i data-lucide="bookmark"></i>
+                        </div>
+                        <div class="caption">
+                            <strong>cafedocaramelo</strong> #meme
+                        </div>
+                    </footer>
+                </article>
+
+                <section class="feed-end">
+                    <div class="check-container">
+                        <div class="check-circle"><i data-lucide="check"></i></div>
+                    </div>
+                    <h2>Isso é tudo</h2>
+                    <p>Você viu todos os novos posts dos últimos 3 dias.</p>
+                </section>
+            </section>
+        </div>
+
+        <aside class="suggestions"></aside>
+    </main>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>
+
