@@ -342,3 +342,118 @@ body {
     transform: scale(1.2);
 }
 
+/* --- Media Query para Mobile (Telas até 768px) --- */
+@media (max-width: 768px) {
+    
+    /* 1. Transforma a sidebar em barra inferior */
+    .sidebar {
+        width: 100%;
+        height: 60px; /* Altura fixa para o menu inferior */
+        bottom: 0;
+        top: auto;
+        left: 0;
+        flex-direction: row; /* Ícones um ao lado do outro */
+        padding: 0 10px;
+        border-right: none;
+        border-top: 1px solid #262626;
+        background-color: #000;
+        justify-content: space-around;
+        z-index: 1000;
+    }
+
+    /* 2. Remove textos e itens desnecessários no mobile */
+    .logo-container, 
+    .search-container, 
+    .nav-item span, 
+    .nav-footer {
+        display: none;
+    }
+
+    /* 3. Ajusta o menu para ocupar a largura toda horizontalmente */
+    .nav-menu {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .nav-item {
+        padding: 10px;
+    }
+
+    /* 4. Ajusta o conteúdo principal para não ficar "atrás" da barra */
+    .main-content {
+        margin-left: 0; /* Remove o espaço da sidebar lateral */
+        margin-bottom: 60px; /* Adiciona espaço para não cobrir o feed */
+        grid-template-columns: 1fr; /* Coluna única no mobile */
+    }
+
+    .content-container {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    /* 5. Ajustes nos Stories para caber melhor */
+    .stories {
+        gap: 10px;
+        padding-left: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: 60px;
+        bottom: 0;
+        top: auto;
+        left: 0;
+        flex-direction: row;
+        padding: 0;
+        border-right: none;
+        border-top: 1px solid #262626;
+        background-color: #000;
+        z-index: 1000;
+    }
+
+    /* Esconde logos, textos e busca */
+    .logo-container, 
+    .search-container, 
+    .nav-item span, 
+    .nav-footer {
+        display: none;
+    }
+
+    /* --- AQUI ESTÁ O TRUQUE: ESCONDER ÍCONES ESPECÍFICOS --- */
+    
+    /* Esconde: Pesquisa (2º), Explorar (3º) e Notificações (6º) */
+    .nav-item:nth-child(2),
+    .nav-item:nth-child(3),
+    .nav-item:nth-child(6) {
+        display: none;
+    }
+
+    .nav-menu {
+        display: flex;
+        width: 100%;
+        justify-content: space-around; /* Espalha os ícones que sobraram */
+        align-items: center;
+    }
+
+    .nav-item {
+        padding: 0;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Ajuste do conteúdo principal */
+    .main-content {
+        margin-left: 0;
+        margin-bottom: 70px;
+        grid-template-columns: 1fr;
+    }
+
+    .content-container {
+        padding: 10px;
+    }
+}
