@@ -111,24 +111,15 @@ return (
 );
 }
 
-function PlacarFutebol({nomeTimeA, nomeTimeB}){
-  const[golsA, setGolsA] = useState(0);
+function PlacarFutebol({ nomeTimeA, nomeTimeB }) {
+  // Criamos duas "caixinhas de memória" (States)
+  const [golsA, setGolsA] = useState(0);
   const [golsB, setGolsB] = useState(0);
 
-  const botaoEstilo = {
-  backgroundColor: '#2e7d32',
-  color: 'white',
-  border: 'none',
-  padding: '10px 20px',
-  borderRadius: '5px',
-  cursor: 'pointer',
-  fontWeight: 'bold'
-};
-
-  return(
+  return (
     <div style={{
       border: '3px solid #2e7d32',
-      boderRadius: '15px',
+      borderRadius: '15px',
       padding: '20px',
       textAlign: 'center',
       backgroundColor: '#f1f8e9',
@@ -136,29 +127,52 @@ function PlacarFutebol({nomeTimeA, nomeTimeB}){
       maxWidth: '400px',
       margin: '20px auto'
     }}>
-      <h2 style={{color: '#1b5e20'}}> Placar de Jogo</h2>
-      <div style={{display: 'flex',
-        justifyContent: 'space-around',
-        alignItems: 'center'}}>
+      <h2 style={{ color: '#1b5e20' }}>⚽ Placar do Jogo</h2>
 
-          {/* LADO DO TIME A */}
-           <div>
-            <h3>{nomeTimeA}</h3>
-            <h1 style={{fontSize: '40px', margin: '10px 0'}}>{golsA}</h1>
-            <button onClick={() => setGolsA(golsA + 1)} style={botaoEstilo}> GOL!</button>
-           </div>
+      <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
 
-           <h1 style={{margin: '20px'}}>X</h1>
+        {/* Lado do Time A */}
+        <div>
+          <h3>{nomeTimeA}</h3>
+          <h1 style={{ fontSize: '48px', margin: '10px 0' }}>{golsA}</h1>
+          <button onClick={() => setGolsA(golsA + 1)} style={botaoEstilo}>
+            GOL!
+          </button>
+        </div>
 
+        <h1 style={{ margin: '0 20px' }}>X</h1>
 
-        {/* LADO DO TIME B */}
-
+        {/* Lado do Time B */}
         <div>
           <h3>{nomeTimeB}</h3>
-          <h1 style={{fontSize: '40px', margin: '10px 0'}}>{golsB}</h1>
-          <button onClick={()=> setGolsB(golsB + 1)} style={botaoEstilo}>GOL!</button>
+          <h1 style={{ fontSize: '48px', margin: '10px 0' }}>{golsB}</h1>
+          <button onClick={() => setGolsB(golsB + 1)} style={botaoEstilo}>
+            GOL!
+          </button>
         </div>
-        </div>
+
+      </div>
+
+      <hr style={{ margin: '20px 0' }} />
+
+      <button
+        onClick={() => { setGolsA(0); setGolsB(0); }}
+        style={{ backgroundColor: '#f44336', color: 'white', border: 'none', padding: '10px', borderRadius: '5px', cursor: 'pointer' }}
+      >
+        Reiniciar Partida 🔄
+      </button>
     </div>
   );
 }
+
+// Estilo simples para os botões de GOL
+const botaoEstilo = {
+  backgroundColor: '#2e7d32',
+  color: 'white',
+  border: 'none',
+  padding: '10px 20px',
+  borderRadius: '5px',
+  fontSize: '16px',
+  cursor: 'pointer',
+  fontWeight: 'bold'
+};
