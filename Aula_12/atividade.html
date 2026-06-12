@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard EdTech - Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        /* Ajuste para a navbar fixa no topo */
+        body {
+            padding-top: 56px;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="bi bi-mortarboard-fill me-2 text-warning"></i>EdTech Escola
+            </a>
+            
+            <form class="d-none d-sm-flex mx-auto w-50" role="search">
+                <input class="form-control me-2 bg-secondary text-white border-0" type="search" placeholder="Pesquisar alunos, cursos..." aria-label="Pesquisar">
+            </form>
+
+            <div class="d-flex align-items-center">
+                <span class="text-white me-2 d-none d-md-inline">Olá, Admin</span>
+                <img src="https://img.magnific.com/vetores-premium/icone-de-perfil-de-avatar-padrao-imagem-de-usuario-de-midia-social-icone-de-avatar-cinza-silhueta-de-perfil-em-branco-ilustracao-vetorial_561158-3383.jpg?semt=ais_hybrid&w=740&q=80" class="rounded-circle border border-2 border-warning" alt="Avatar" width="40" height="40">
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            
+            <aside class="col-lg-2 d-none d-lg-block bg-white vh-100 position-fixed border-end p-3" style="top: 56px; left: 0;">
+                <div class="d-flex flex-column h-100">
+                    <ul class="nav nav-pills flex-column mb-auto gap-2">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active bg-dark" aria-current="page">
+                                <i class="bi bi-speedometer2 me-2"></i> Dashboard
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link text-dark">
+                                <i class="bi bi-people me-2"></i> Alunos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link text-dark">
+                                <i class="bi bi-book me-2"></i> Cursos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link text-dark">
+                                <i class="bi bi-envelope-open me-2"></i> Chamados
+                            </a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <div class="dropdown">
+                        <a href="#" class="d-flex align-items-center text-dark text-decoration-none">
+                            <i class="bi bi-gear me-2"></i> Configurações
+                        </a>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="col-12 col-lg-10 ms-auto p-4">
+                
+                <div class="d-flex justify-content-between align-items-center flex-wrap mb-4 gap-3">
+                    <div>
+                        <h1 class="h2 fw-bold text-dark m-0">Painel de Controle</h1>
+                        <p class="text-secondary m-0">Gestão acadêmica em tempo real</p>
+                    </div>
+                    <button type="button" class="btn btn-dark d-flex align-items-center gap-2 px-4 shadow-sm" data-bs-toggle="modal" data-bs-target="#modalCadastroAluno">
+                        <i class="bi bi-person-plus-fill"></i> Cadastrar Novo Aluno
+                    </button>
+                </div>
+
+                <div class="row g-3 mb-4">
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card text-bg-primary border-0 shadow-sm h-100">
+                            <div class="card-body d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h6 class="card-title text-white-50 text-uppercase fw-bold small">Alunos Ativos</h6>
+                                    <h3 class="card-text fw-bold mb-0">1.248</h3>
+                                </div>
+                                <div class="fs-1 text-white-50"><i class="bi bi-people-fill"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card text-bg-success border-0 shadow-sm h-100">
+                            <div class="card-body d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h6 class="card-title text-white-50 text-uppercase fw-bold small">Cursos Publicados</h6>
+                                    <h3 class="card-text fw-bold mb-0">32</h3>
+                                </div>
+                                <div class="fs-1 text-white-50"><i class="bi bi-journal-bookmark-fill"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card text-bg-warning border-0 shadow-sm h-100">
+                            <div class="card-body d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h6 class="card-title text-dark-50 text-uppercase fw-bold small">Taxa de Retenção</h6>
+                                    <h3 class="card-text fw-bold mb-0">94,2%</h3>
+                                </div>
+                                <div class="fs-1 text-black-50"><i class="bi bi-graph-up-arrow"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card text-bg-danger border-0 shadow-sm h-100">
+                            <div class="card-body d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h6 class="card-title text-white-50 text-uppercase fw-bold small">Chamados Abertos</h6>
+                                    <h3 class="card-text fw-bold mb-0">7</h3>
+                                </div>
+                                <div class="fs-1 text-white-50"><i class="bi bi-exclamation-triangle-fill"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert alert-warning alert-dismissible fade show shadow-sm mb-4" role="alert">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-info-circle-fill fs-5 me-2"></i>
+                        <div>
+                            <strong>Manutenção programada:</strong> O sistema passará por uma atualização hoje às 23h. O acesso poderá ficar instável por até 15 minutos.
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-header bg-white py-3">
+                        <h5 class="card-title fw-bold text-dark mb-0">Alunos Recentes</h5>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th scope="col" class="ps-3">ID</th>
+                                        <th scope="col">Nome</th>
+                                        <th scope="col">Curso</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col" class="text-end pe-3">Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="ps-3 fw-bold">#1024</td>
+                                        <td>Ana Clara Silva</td>
+                                        <td>Desenvolvimento Full Stack</td>
+                                        <td><span class="badge bg-success">Pago</span></td>
+                                        <td class="text-end pe-3">
+                                            <button class="btn btn-sm btn-outline-secondary me-1"><i class="bi bi-pencil"></i></button>
+                                            <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-3 fw-bold">#1023</td>
+                                        <td>Bruno Oliveira</td>
+                                        <td>UI/UX Design Avançado</td>
+                                        <td><span class="badge bg-warning text-dark">Pendente</span></td>
+                                        <td class="text-end pe-3">
+                                            <button class="btn btn-sm btn-outline-secondary me-1"><i class="bi bi-pencil"></i></button>
+                                            <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-3 fw-bold">#1022</td>
+                                        <td>Carlos Eduardo</td>
+                                        <td>Data Science & IA</td>
+                                        <td><span class="badge bg-success">Pago</span></td>
+                                        <td class="text-end pe-3">
+                                            <button class="btn btn-sm btn-outline-secondary me-1"><i class="bi bi-pencil"></i></button>
+                                            <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-3 fw-bold">#1021</td>
+                                        <td>Daniela Costa</td>
+                                        <td>Product Management</td>
+                                        <td><span class="badge bg-success">Pago</span></td>
+                                        <td class="text-end pe-3">
+                                            <button class="btn btn-sm btn-outline-secondary me-1"><i class="bi bi-pencil"></i></button>
+                                            <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-3 fw-bold">#1020</td>
+                                        <td>Eduardo Santos</td>
+                                        <td>Marketing Digital 360</td>
+                                        <td><span class="badge bg-warning text-dark">Pendente</span></td>
+                                        <td class="text-end pe-3">
+                                            <button class="btn btn-sm btn-outline-secondary me-1"><i class="bi bi-pencil"></i></button>
+                                            <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white py-3 d-flex justify-content-end">
+                        <nav aria-label="Navegação de alunos recentes">
+                            <ul class="pagination mb-0">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+                                </li>
+                                <li class="page-item active" aria-current="page"><a class="page-link bg-dark border-dark" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link text-dark" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link text-dark" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link text-dark" href="#">Próximo</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalCadastroAluno" tabindex="-1" aria-labelledby="modalCadastroAlunoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title fw-bold" id="modalCadastroAlunoLabel">Novo Cadastro de Aluno</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="needs-validation" novalidate>
+                        <div class="mb-3">
+                            <label for="nomeAluno" class="form-label fw-semibold">Nome Completo</label>
+                            <input type="text" class="form-control" id="nomeAluno" placeholder="Ex: Maria Souza" required>
+                            <div class="invalid-feedback">Por favor, insira o nome completo.</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="cursoAluno" class="form-label fw-semibold">Curso Matriculado</label>
+                            <select class="form-select" id="cursoAluno" required>
+                                <option value="" selected disabled>Escolha um curso da lista...</option>
+                                <option value="1">Desenvolvimento Full Stack</option>
+                                <option value="2">UI/UX Design Avançado</option>
+                                <option value="3">Data Science & IA</option>
+                                <option value="4">Product Management</option>
+                            </select>
+                            <div class="invalid-feedback">Por favor, selecione um curso.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="fotoAluno" class="form-label fw-semibold">Foto de Perfil</label>
+                            <input class="form-control" type="file" id="fotoAluno" required>
+                            <div class="invalid-feedback">Por favor, envie uma foto válida.</div>
+                        </div>
+                        
+                        <div class="modal-footer px-0 pb-0 pt-3">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-dark">Salvar Matrícula</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Script de validação visual básica (.needs-validation)
+        (() => {
+          'use strict'
+          const forms = document.querySelectorAll('.needs-validation')
+          Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+              if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+              }
+              form.classList.add('was-validated')
+            }, false)
+          })
+        })()
+    </script>
+</body>
+</html>
